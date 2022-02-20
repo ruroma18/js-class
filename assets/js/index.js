@@ -3,6 +3,7 @@ class Cat {
     this.breed = breed;
     this.nickname = nickname;
     this.numberOfMiceCatch = 0;
+    this.successChance = 0.8;
   }
 
   meow () {
@@ -18,16 +19,23 @@ class Cat {
   }
 
   catchMice () {
-    this.numberOfMiceCatch++;
-    return `${this.nickname} catch ${this.numberOfMiceCatch} mice`;
+    let chance = this.successChance * Math.random();
+    if (chance.toFixed(1) > 0.5) {
+      this.numberOfMiceCatch++;
+      return `${this.nickname} catch ${this.numberOfMiceCatch} mice`;
+    } else {
+      return `${this.nickname} can't catch a mouse`;
+    }
   }
+
+  
 }
 
 class StrayCat extends Cat {
   
   constructor(nickname, numberOfMiceCatch) {
     super('stray', nickname, numberOfMiceCatch)
-    
+    this.successChance = 1
     this.eatCatchMice = 0;
   }
 
