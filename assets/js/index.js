@@ -30,6 +30,15 @@ class StrayCat extends Cat {
     
     this.eatCatchMice = 0;
   }
+
+  eat () {
+    if (this.numberOfMiceCatch > this.eatCatchMice) {
+      this.eatCatchMice++
+      return `${this.nickname} eat mouse` 
+    } else {
+      return `${this.nickname} need to hunt`
+    }
+  }
 }
 
 const cat1 = new StrayCat('robin');
