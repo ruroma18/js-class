@@ -1,5 +1,5 @@
 class Cat {
-  constructor(breed, nickname, numberOfMiceCatch) {
+  constructor(breed, nickname) {
     this.breed = breed;
     this.nickname = nickname;
     this.numberOfMiceCatch = 0;
@@ -23,4 +23,14 @@ class Cat {
   }
 }
 
-const cat1 = new Cat('seams', 'robin')
+class StrayCat extends Cat {
+  
+  constructor(nickname, numberOfMiceCatch) {
+    super('stray', nickname, numberOfMiceCatch)
+    
+    this.eatCatchMice = 0;
+  }
+}
+
+const cat1 = new StrayCat('robin');
+const cat2 = new Cat('seans', 'hollan');
